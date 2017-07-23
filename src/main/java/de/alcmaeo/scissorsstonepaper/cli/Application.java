@@ -29,7 +29,7 @@ public class Application {
 
     private Game game;
 
-    public Application(Game game) {
+    private Application(Game game) {
         this.random = new SecureRandom();
         this.game = game;
     }
@@ -66,7 +66,7 @@ public class Application {
     }
 
     /**
-     * Plays the game.
+     * Plays the game with n Rounds.
      */
     private void play() {
         List<GameResult> results = new ArrayList<>();
@@ -87,6 +87,13 @@ public class Application {
         System.out.println(playerName + " lost " + lost + " times");
     }
 
+    /**
+     * Prints the round to the user. The both choosed values (user and computer) and the result.
+     *
+     * @param playerOne
+     * @param computer
+     * @param result
+     */
     private void printRound(GameValue playerOne, GameValue computer, GameResult result) {
         System.out.println("");
         System.out.println(playerName + " choosed: " + playerOne.name());
